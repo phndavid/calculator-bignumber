@@ -30,7 +30,7 @@ public  class NumbersList<N> implements IBigNum<N>{
 		}
 		else
 	    {
-	    	bigNum.setNext(firstNumber);
+	    	((DoubleNode) bigNum).setNext(firstNumber);
 	    	firstNumber = bigNum;
 	    }
 	    
@@ -39,14 +39,13 @@ public  class NumbersList<N> implements IBigNum<N>{
 
 	@Override
     public int getSize() {
-		Object actual =  firstNumber;
-		int longitud = 0;
-		while( actual != null )
-		{
-			longitud++;
-			actual =    ((DoubleNode) actual).getNext();
-		}
-		return longitud;
+		  int cant = 0;
+	        DoubleNode<N> reco = firstNode;
+	        while (reco != null) {
+	            reco = (DoubleNode<N>) reco.getNext();
+	            cant++;
+	        }
+	        return cant;
     }
 	@Override
     public boolean remove(N bigNum) {
@@ -92,7 +91,15 @@ public  class NumbersList<N> implements IBigNum<N>{
 	    
 	    return firstNumber;
     }
-	
+	 public void imprimir ()
+	    {
+	       DoubleNode<N> reco = firstNode;
+	        while (reco != null) {
+	            System.out.print (reco.toString() + "-");
+	            reco = (DoubleNode<N>) reco.getNext();
+	        }
+	        System.out.println();
+	    }
 
 
 	

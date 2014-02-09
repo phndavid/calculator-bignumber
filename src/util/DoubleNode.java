@@ -2,16 +2,19 @@ package util;
 
 public class DoubleNode<N> {
 
-	private DoubleNode<N> nextNode;
+	
 	private DoubleNode<N> previousNode;
+	private N previousNumber;
 	
 	private N nextNumber;
-	private N previousNumber;;
+	private DoubleNode<N> nextNode;
 	
-	public DoubleNode()
+	
+	
+	public DoubleNode(N number)
 	{
-		nextNumber = (N) nextNode ;
-		previousNumber = (N) previousNode ;
+		nextNumber = number;
+	
 	}
 
 	public N getNext()
@@ -23,16 +26,7 @@ public class DoubleNode<N> {
 	{
 		this.nextNumber = number2;
 	}
-
-	public N getPrevious()
-	{
-		return previousNumber;
-	}
-
-	public void setPrevious(DoubleNode<N> previous)
-	{
-		this.previousNode = previous;
-	}
+	
 	public N getNumber()
 	{
 		return nextNumber;
