@@ -30,7 +30,7 @@ public  class NumbersList<N> implements IBigNum<N>{
 		}
 		else
 	    {
-	    	((DoubleNode) bigNum).setNext(firstNumber);
+	    	//((DoubleNode) bigNum).setNext(firstNumber);
 	    	firstNumber = bigNum;
 	    }
 	    

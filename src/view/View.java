@@ -1,9 +1,5 @@
 package view;
 
-import java.awt.BorderLayout;
-
-import com.sun.prism.paint.Color;
-
 import javafx.event.EventHandler;
 import javafx.geometry.Pos;
 import javafx.scene.Group;
@@ -21,7 +17,8 @@ public class View {
 
 	private Scene scene;
 
-	private Button btnNumOne, btnNumTwo, btnNumThree, btnNumFour, btnNumFive, btnNumSix, btnNumSeven, btnNumEight, btnNumNine,btnAns,btnNumZero,btnPor;	
+	private Button btnNumOne, btnNumTwo, btnNumThree, btnNumFour, btnNumFive, btnNumSix, btnNumSeven, btnNumEight, 
+								btnNumNine,btnAns,btnNumZero,btnPor,btnClear,btnDelete,btnDoubleZero;	
 	private HBox hbc, hbC1,hbC2,hbC3,hbDisplay,hbOperation;
 	private VBox vbColumn1, vbOperation, vbColumn2,vbColumn3;
 	private Button btnSum, btnDeduc, btnDivide, btnMultiply,btnEquals;
@@ -73,12 +70,19 @@ public class View {
 		hbc.getChildren().add(hbC1);
 
 		vbColumn1 = new VBox(2);
+		
+		btnClear = new Button("AC");
+		btnClear.setStyle("-fx-background-color: #FF6347;-fx-text-fill: #FFFFFF;-fx-font-size:20px;-fx-background-radius:0px");
+		btnClear.setPrefSize(100, 30);
+		
 		btnNumSeven = new Button("7");
 		btnNumSeven.setStyle("-fx-background-color: #1E90FF; -fx-text-fill: #FFFFFF;-fx-font-size:20px;-fx-background-radius:0px ;");
 		btnNumSeven.setPrefSize(100, 30);
+		
 		btnNumFour = new Button("4");
 		btnNumFour.setStyle("-fx-background-color:#1E90FF;-fx-text-fill: #FFFFFF;-fx-font-size:20px;-fx-background-radius:0px");
 		btnNumFour.setPrefSize(100, 30);
+		
 		btnNumOne = new Button("1");
 		
 		  btnNumOne.setOnMouseClicked(new EventHandler<MouseEvent>() 
@@ -99,7 +103,7 @@ public class View {
 		btnNumZero = new Button("0");
 		btnNumZero.setStyle("-fx-background-color: #1E90FF; -fx-text-fill: #FFFFFF;-fx-font-size:20px;-fx-background-radius:0px");
 		btnNumZero.setPrefSize(100, 30);
-		vbColumn1.getChildren().addAll(btnNumSeven, btnNumFour,btnNumOne,btnNumZero);
+		vbColumn1.getChildren().addAll(btnClear,btnNumSeven, btnNumFour,btnNumOne,btnNumZero);
 		hbC1.getChildren().add(vbColumn1);
 		
 		hbC2 = new HBox();
@@ -108,20 +112,29 @@ public class View {
 		hbc.getChildren().add(hbC2);
 
 		vbColumn2 = new VBox(2);
-		btnNumEight = new Button("8");
-		btnNumEight .setStyle("-fx-background-color: #1E90FF;-fx-text-fill: #FFFFFF;-fx-font-size:20px;-fx-background-radius:0px");
-		btnNumEight.setPrefSize(100, 30);
-		btnNumFive = new Button("5");
-		btnNumFive.setStyle("-fx-background-color:#1E90FF;-fx-text-fill: #FFFFFF;-fx-font-size:20px;-fx-background-radius:0px");
-		btnNumFive.setPrefSize(100, 30);
-		btnNumTwo = new Button("2");
-		btnNumTwo.setStyle("-fx-background-color: #1E90FF;-fx-text-fill: #FFFFFF;-fx-font-size:20px;-fx-background-radius:0px");
-		btnNumTwo.setPrefSize(100, 30);
 		
 		btnPor = new Button("%");
 		btnPor.setStyle("-fx-background-color: #1E90FF;-fx-text-fill: #FFFFFF;-fx-font-size:20px;-fx-background-radius:0px");
 		btnPor.setPrefSize(100, 30);
-		vbColumn2.getChildren().addAll(btnNumEight, btnNumFive,btnNumTwo,btnPor);
+		
+		btnNumEight = new Button("8");
+		btnNumEight .setStyle("-fx-background-color: #1E90FF;-fx-text-fill: #FFFFFF;-fx-font-size:20px;-fx-background-radius:0px");
+		btnNumEight.setPrefSize(100, 30);
+		
+		btnNumFive = new Button("5");
+		btnNumFive.setStyle("-fx-background-color:#1E90FF;-fx-text-fill: #FFFFFF;-fx-font-size:20px;-fx-background-radius:0px");
+		btnNumFive.setPrefSize(100, 30);
+		
+		btnNumTwo = new Button("2");
+		btnNumTwo.setStyle("-fx-background-color: #1E90FF;-fx-text-fill: #FFFFFF;-fx-font-size:20px;-fx-background-radius:0px");
+		btnNumTwo.setPrefSize(100, 30);
+		
+		btnDoubleZero = new Button("00");
+		btnDoubleZero.setStyle("-fx-background-color: #1E90FF;-fx-text-fill: #FFFFFF;-fx-font-size:20px;-fx-background-radius:0px");
+		btnDoubleZero.setPrefSize(100, 30);
+		
+		
+		vbColumn2.getChildren().addAll(btnPor, btnNumEight, btnNumFive,btnNumTwo,btnDoubleZero);
 		hbC2.getChildren().add(vbColumn2);
 	
 		hbC3 = new HBox();
@@ -130,12 +143,19 @@ public class View {
 		hbc.getChildren().add(hbC3);
 
 		vbColumn3 = new VBox(2);
+		
+		btnDelete = new Button("< |");
+		btnDelete.setStyle("-fx-background-color:#FFA500;-fx-text-fill: #FFFFFF;-fx-font-size:20px;-fx-background-radius:0px");
+		btnDelete.setPrefSize(100, 30);
+		
 		btnNumNine = new Button("9");
 		btnNumNine.setStyle("-fx-background-color: #1E90FF;-fx-text-fill: #FFFFFF;-fx-font-size:20px;-fx-background-radius:0px");
 		btnNumNine.setPrefSize(100, 30);
+		
 		btnNumSix = new Button("6");
 		btnNumSix.setStyle("-fx-background-color:#1E90FF;-fx-text-fill: #FFFFFF;-fx-font-size:20px;-fx-background-radius:0px");
 		btnNumSix.setPrefSize(100, 30);
+		
 		btnNumThree = new Button("3");
 		btnNumThree.setStyle("-fx-background-color: #1E90FF;-fx-text-fill: #FFFFFF;-fx-font-size:20px;-fx-background-radius:0px");
 		btnNumThree.setPrefSize(100, 30);
@@ -143,7 +163,7 @@ public class View {
 		btnAns = new Button("Ans");
 		btnAns.setStyle("-fx-background-color: #4169E1;-fx-text-fill: #FFFFFF;-fx-font-size:20px;-fx-background-radius:0px");
 		btnAns.setPrefSize(100, 30);
-		vbColumn3.getChildren().addAll(btnNumNine, btnNumSix,btnNumThree,btnAns);
+		vbColumn3.getChildren().addAll(btnDelete,btnNumNine, btnNumSix,btnNumThree,btnAns);
 		hbC3.getChildren().add(vbColumn3);
 		
 

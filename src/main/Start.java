@@ -12,8 +12,9 @@ public class  Start extends Application {
 	      
 	    @Override
 	    public void start(Stage primaryStage) {
+	    	
 	    	   DataBean dataBean = new DataBean(primaryStage);
-	           // Ersten Controller aufrufen
+	     
 	           ViewVC eingabeVC = new ViewVC(dataBean);
 	           eingabeVC.show();   
 	    }
