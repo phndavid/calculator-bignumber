@@ -1,9 +1,11 @@
-package view;
+package controller;
 
 import java.awt.event.ActionEvent;
 
 import javax.swing.JOptionPane;
 
+import view.DataBean;
+import view.View;
 import javafx.event.EventHandler;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;

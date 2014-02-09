@@ -2,9 +2,9 @@ package main;
 
 
 
+import controller.ViewVC;
 import view.DataBean;
 import view.View;
-import view.ViewVC;
 import javafx.application.Application;
 import javafx.stage.Stage;
 public class  Start extends Application {
