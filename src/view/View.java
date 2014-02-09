@@ -176,6 +176,16 @@ public class View {
 		hbc.getChildren().add(hbOperation);
 		
 		vbOperation = new VBox(2);
+	
+		
+		btnDivide = new Button("÷");/* bt */
+		btnDivide.setPrefSize(50, 30);
+		btnDivide.setStyle("-fx-background-color:#FFD700;-fx-text-fill: #FFFFFF;-fx-font-size:20px;-fx-background-radius:0px");
+		
+		btnMultiply = new Button("x");
+		btnMultiply.setStyle("-fx-background-color:#FFD700;-fx-text-fill: #FFFFFF;-fx-font-size:20px;-fx-background-radius:0px");
+		btnMultiply.setPrefSize(50, 30);
+		
 		btnSum = new Button("+"); 
 		btnSum.setStyle("-fx-background-color: #FFD700;-fx-text-fill: #FFFFFF;-fx-font-size:20px;-fx-background-radius:0px");
 		btnSum.setPrefSize(50, 30);
@@ -184,18 +194,10 @@ public class View {
 		btnDeduc.setPrefSize(50, 30);
 		btnDeduc.setStyle("-fx-background-color:#FFD700;-fx-text-fill: #FFFFFF;-fx-font-size:20px;-fx-background-radius:0px");
 		
-		btnDivide = new Button("/");/* bt */
-		btnDivide.setPrefSize(50, 30);
-		btnDivide.setStyle("-fx-background-color:#FFD700;-fx-text-fill: #FFFFFF;-fx-font-size:20px;-fx-background-radius:0px");
-		
-		btnMultiply = new Button("x");
-		btnMultiply.setStyle("-fx-background-color:#FFD700;-fx-text-fill: #FFFFFF;-fx-font-size:20px;-fx-background-radius:0px");
-		btnMultiply.setPrefSize(50, 30);
-		
 		btnEquals = new Button("=");
 		btnEquals.setStyle("-fx-background-color: #FFA500;-fx-background-radius:0px");
 		btnEquals.setPrefSize(50, 40);
-		vbOperation.getChildren().addAll(btnSum, btnDeduc, btnDivide, btnMultiply,btnEquals);
+		vbOperation.getChildren().addAll( btnDivide, btnMultiply,btnSum, btnDeduc,btnEquals);
 		hbOperation.getChildren().add(vbOperation);
 		// ------------------------------------------------------------------------------------------------
 		container.setCenter(go);
