@@ -2,30 +2,47 @@ package util;
 
 public class DoubleNode<N> {
 
-	private DoubleNode<N> next; 
-	private DoubleNode<N> previous; 
-	private N number; 
+	private DoubleNode<N> nextNode;
+	private DoubleNode<N> previousNode;
 	
-	public DoubleNode(N number) { 
-		this.number = number; 
+	private N nextNumber;
+	private N previousNumber;;
+	
+	public DoubleNode()
+	{
+		nextNumber = (N) nextNode ;
+		previousNumber = (N) previousNode ;
 	}
-	public DoubleNode<N> getNext(){
-		return next;
+
+	public N getNext()
+	{
+		return nextNumber;
 	}
-	public void setNext(DoubleNode<N> next){
-		this.next = next;
+
+	public void setNext(N number2)
+	{
+		this.nextNumber = number2;
 	}
-	public DoubleNode<N> getPrevious(){
-		return previous;
+
+	public N getPrevious()
+	{
+		return previousNumber;
 	}
-	public void setPrevious(DoubleNode<N> previous){
-		this.previous = previous;
+
+	public void setPrevious(DoubleNode<N> previous)
+	{
+		this.previousNode = previous;
 	}
-	public N getNumber(){
-		return number;
-	}
-	public void setNumber(N number){
-		this.number = number;
+	public N getNumber()
+	{
+		return nextNumber;
 	}
 	
+	public void setNumber(N number)
+	{
+		this.nextNumber = number;
+	}
+
+
+
 }

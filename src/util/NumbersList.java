@@ -1,43 +1,59 @@
 package util;
 
-public class NumbersList<N> implements IBigNum<N>{
+public  class NumbersList<N> implements IBigNum<N>{
 
-	private DoubleNode<N> first; 
-	private DoubleNode<N> last; 
+	private DoubleNode<N> firstNode; 
+	private DoubleNode<N> lastNode;
 	
+	private N firstNumber;
+	private N lastNumber;
 	
-	@Override
-	public boolean agregar(N element)
-	{
-		// TODO Auto-generated method stub
-		return false;
+	public NumbersList(){
+		
+		firstNumber = (N) firstNode;
+		lastNumber = (N) lastNode;
 	}
 
-	@Override
-	public boolean buscar(N element)
-	{
-		// TODO Auto-generated method stub
-		return false;
-	}
 
 	@Override
-	public boolean eliminar(N element)
-	{
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-    public void addNumber(IBigNum<N> bigNum) {
+    public boolean searchNumber(N bigNum) {
 	    // TODO Auto-generated method stub
+	    return false;
+    }
+
+
+	@Override
+    public void addNumber(N bigNum) {
+		if(firstNumber == null)
+		{	
+			firstNumber = bigNum;
+		}
+		else
+	    {
+	    	bigNum.setNext(firstNumber);
+	    	firstNumber = bigNum;
+	    }
 	    
     }
 
+
 	@Override
-    public void remove() {
-	    // TODO Auto-generated method stub
-	    
+    public int getSize() {
+		Object actual =  firstNumber;
+		int longitud = 0;
+		while( actual != null )
+		{
+			longitud++;
+			actual =    ((DoubleNode) actual).getNext();
+		}
+		return longitud;
     }
+	@Override
+    public boolean remove(N bigNum) {
+	    // TODO Auto-generated method stub
+	    return false;
+    }
+
 
 	@Override
     public void removeAll() {
@@ -45,11 +61,39 @@ public class NumbersList<N> implements IBigNum<N>{
 	    
     }
 
+
 	@Override
-    public IBigNum<N> getBigNumber() {
+    public IBigNum<N> getListBigNumber() {
 	    // TODO Auto-generated method stub
 	    return null;
     }
+
+
+	@Override
+    public boolean equalsNumer(N bigNum) {
+	    // TODO Auto-generated method stub
+	    return false;
+    }
+
+
+	@Override
+    public N cloneNumer() {
+	    // TODO Auto-generated method stub
+	    return null;
+    }
+
+	public String toString() {
+		return "Numero:" + firstNumber;
+	}
+
+
+	@Override
+    public N getBigNumber() {
+	    
+	    return firstNumber;
+    }
+	
+
 
 	
 	

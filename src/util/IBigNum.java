@@ -2,16 +2,25 @@ package util;
 
 public interface IBigNum<N> {
 
-	public boolean agregar(N element); 
-	public boolean buscar(N element);
-	public boolean eliminar(N element);
+	
+	public boolean searchNumber(N bigNum);
 
-	public void addNumber(IBigNum<N> bigNum);
+	public void addNumber(N bigNum);
 
-	public void remove();
+	public boolean remove(N bigNum);
 
 	public void removeAll();
 
-	public IBigNum<N> getBigNumber();
+	public IBigNum<N> getListBigNumber();
+	
+	public N getBigNumber();
+	
+	public boolean equalsNumer(N bigNum);
+	
+	public N cloneNumer();
+	
+	public int getSize();
+
+
 	
 }
