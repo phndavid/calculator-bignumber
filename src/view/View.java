@@ -18,9 +18,9 @@ public class View {
 	private Scene scene;
 
 	private Button btnNumOne, btnNumTwo, btnNumThree, btnNumFour, btnNumFive, btnNumSix, btnNumSeven, btnNumEight, 
-								btnNumNine,btnAns,btnNumZero,btnPor,btnClear,btnDelete,btnDoubleZero;	
-	private HBox hbc, hbC1,hbC2,hbC3,hbDisplay,hbOperation;
-	private VBox vbColumn1, vbOperation, vbColumn2,vbColumn3;
+								btnNumNine,btnAns,btnNumZero,btnPor,btnClear,btnDelete,btnDoubleZero,btnClose, btnOpen;	
+	private HBox hbc, hbC1,hbC2,hbC3,hbDisplay,hbOperation,hbParenthesis ;
+	private VBox vbColumn1, vbOperation, vbColumn2,vbColumn3,vbParenthesis;
 	private Button btnSum, btnDeduc, btnDivide, btnMultiply,btnEquals;
 	private TextField display;
 
@@ -39,7 +39,7 @@ public class View {
 		hbDisplay.setLayoutX(0);
 		hbDisplay.setLayoutY(0);
 		hbDisplay.setPrefHeight(50);/* , */
-		hbDisplay.setPrefWidth(300);
+		hbDisplay.setPrefWidth(450);
 		go.getChildren().add(hbDisplay);
 	
 //		#90EE90
@@ -47,7 +47,7 @@ public class View {
 		display.setStyle("-fx-background-color:#FFFFFF; -fx-font-size:20px;-fx-border-color: rgb(49, 89, 23);");
 		display.setLayoutX(0);
 		display.setLayoutY(5);
-		display.setPrefSize(300, 40);
+		display.setPrefSize(450, 40);
 		display.setAlignment(Pos.CENTER_RIGHT);
 		hbDisplay.getChildren().add(display);
 		
@@ -59,7 +59,7 @@ public class View {
 			hbc.setLayoutX(0);
 			hbc.setLayoutY(50);
 			hbc.setPrefHeight(200);/* , */
-			hbc.setPrefWidth(300);
+			hbc.setPrefWidth(450);
 			go.getChildren().add(hbc);
 		// ------------------------------------------------------------------------------------------------
 		// Number
@@ -179,29 +179,53 @@ public class View {
 	
 		
 		btnDivide = new Button("÷");/* bt */
-		btnDivide.setPrefSize(50, 30);
+		btnDivide.setPrefSize(80, 30);
 		btnDivide.setStyle("-fx-background-color:#FFD700;-fx-text-fill: #FFFFFF;-fx-font-size:20px;-fx-background-radius:0px");
 		
 		btnMultiply = new Button("x");
 		btnMultiply.setStyle("-fx-background-color:#FFD700;-fx-text-fill: #FFFFFF;-fx-font-size:20px;-fx-background-radius:0px");
-		btnMultiply.setPrefSize(50, 30);
+		btnMultiply.setPrefSize(80, 30);
+		
+		btnDeduc = new Button("-");
+		btnDeduc.setPrefSize(80, 30);
+		btnDeduc.setStyle("-fx-background-color:#FFD700;-fx-text-fill: #FFFFFF;-fx-font-size:20px;-fx-background-radius:0px");
 		
 		btnSum = new Button("+"); 
 		btnSum.setStyle("-fx-background-color: #FFD700;-fx-text-fill: #FFFFFF;-fx-font-size:20px;-fx-background-radius:0px");
-		btnSum.setPrefSize(50, 30);
+		btnSum.setPrefSize(80, 80);
 		
-		btnDeduc = new Button("-");
-		btnDeduc.setPrefSize(50, 30);
-		btnDeduc.setStyle("-fx-background-color:#FFD700;-fx-text-fill: #FFFFFF;-fx-font-size:20px;-fx-background-radius:0px");
-		
-		btnEquals = new Button("=");
-		btnEquals.setStyle("-fx-background-color: #FFA500;-fx-background-radius:0px");
-		btnEquals.setPrefSize(50, 40);
-		vbOperation.getChildren().addAll( btnDivide, btnMultiply,btnSum, btnDeduc,btnEquals);
+	
+		vbOperation.getChildren().addAll( btnDivide, btnMultiply, btnDeduc,btnSum);
 		hbOperation.getChildren().add(vbOperation);
+		
 		// ------------------------------------------------------------------------------------------------
+		// Parenthesis
+		// ------------------------------------------------------------------------------------------------
+				hbParenthesis = new HBox();
+				hbParenthesis.setPrefHeight(100);
+				hbParenthesis.setPrefWidth(300);
+				hbc.getChildren().add(hbParenthesis);
+				
+				vbParenthesis  = new VBox(2);
+			
+				btnOpen = new Button("(");
+				btnOpen.setStyle("-fx-background-color:#FFD700;-fx-text-fill: #FFFFFF;-fx-font-size:20px;-fx-background-radius:0px");
+				btnOpen.setPrefSize(80, 30);
+				
+				btnClose = new Button(")");/* bt */
+				btnClose.setPrefSize(80, 30);
+				btnClose.setStyle("-fx-background-color:#FFD700;-fx-text-fill: #FFFFFF;-fx-font-size:20px;-fx-background-radius:0px");
+				
+				btnEquals = new Button("=");
+				btnEquals.setStyle("-fx-background-color: #FFA500;-fx-background-radius:0px");
+				btnEquals.setPrefSize(80, 120);
+				
+				vbParenthesis.getChildren().addAll( btnOpen,btnClose,btnEquals);
+				hbParenthesis.getChildren().add(vbParenthesis);
+				// ------------------------------------------------------------------------------------------------
+		
 		container.setCenter(go);
-		scene = new Scene(container, 334, 334);
+		scene = new Scene(container, 470, 334);
 	
 	}
 
