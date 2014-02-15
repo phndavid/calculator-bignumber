@@ -5,13 +5,9 @@ public  class NumbersList<N> implements IBigNum<N>{
 	private DoubleNode<N> firstNode; 
 	private DoubleNode<N> lastNode;
 	
-	private N firstNumber;
-	private N lastNumber;
 	
 	public NumbersList(){
 		
-		firstNumber = (N) firstNode;
-		lastNumber = (N) lastNode;
 	}
 
 
@@ -22,16 +18,17 @@ public  class NumbersList<N> implements IBigNum<N>{
     }
 
 
-	@Override
+	@SuppressWarnings("unchecked")
+    @Override
     public void addNumber(N bigNum) {
-		if(firstNumber == null)
+		if(firstNode == null)
 		{	
-			firstNumber = bigNum;
+			firstNode = (DoubleNode<N>) bigNum;
 		}
 		else
 	    {
-	    	//((DoubleNode) bigNum).setNext(firstNumber);
-	    	firstNumber = bigNum;
+			((DoubleNode<N>) bigNum).setNext((DoubleNode<N>) firstNode);
+	    	firstNode = (DoubleNode<N>) bigNum;
 	    }
 	    
     }
@@ -82,14 +79,14 @@ public  class NumbersList<N> implements IBigNum<N>{
     }
 
 	public String toString() {
-		return "Numero:" + firstNumber;
+		return "Numero:" + firstNode;
 	}
 
 
 	@Override
     public N getBigNumber() {
 	    
-	    return firstNumber;
+	    return null;
     }
 	 public void imprimir ()
 	    {

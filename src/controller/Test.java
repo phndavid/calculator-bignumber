@@ -1,13 +1,13 @@
 package controller;
 
+import util.DoubleNode;
 import util.NumbersList;
 
 public class Test {
 
 	public Test() 
 	{
-		NumbersList<Integer> numberList = new NumbersList<Integer>();
-		
+		NumbersList numberList = new NumbersList();
 		
 		for (int i = 0; i < 10; i++) {
 			numberList.addNumber(i);

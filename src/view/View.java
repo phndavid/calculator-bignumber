@@ -18,7 +18,7 @@ public class View {
 	private Scene scene;
 
 	private Button btnNumOne, btnNumTwo, btnNumThree, btnNumFour, btnNumFive, btnNumSix, btnNumSeven, btnNumEight, 
-								btnNumNine,btnAns,btnNumZero,btnPor,btnClear,btnDelete,btnDoubleZero,btnClose, btnOpen;	
+							   btnNumNine,btnAns,btnNumZero,btnPor,btnClear,btnDelete,btnDoubleZero,btnClose, btnOpen;	
 	private HBox hbc, hbC1,hbC2,hbC3,hbDisplay,hbOperation,hbParenthesis ;
 	private VBox vbColumn1, vbOperation, vbColumn2,vbColumn3,vbParenthesis;
 	private Button btnSum, btnDeduc, btnDivide, btnMultiply,btnEquals;

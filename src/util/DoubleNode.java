@@ -1,6 +1,6 @@
 package util;
 
-public class DoubleNode<N> {
+public abstract class  DoubleNode<N> {
 
 	
 	private DoubleNode<N> previousNode;
@@ -13,7 +13,7 @@ public class DoubleNode<N> {
 	
 	public DoubleNode(N number)
 	{
-		nextNumber = number;
+	nextNode = (DoubleNode<N>) number;
 	
 	}
 
@@ -22,9 +22,9 @@ public class DoubleNode<N> {
 		return nextNumber;
 	}
 
-	public void setNext(N number2)
+	public void setNext(DoubleNode<N> number2)
 	{
-		this.nextNumber = number2;
+		this.nextNode =  number2;
 	}
 	
 	public N getNumber()
