@@ -1,13 +1,10 @@
 package view;
 
-import javafx.event.EventHandler;
 import javafx.geometry.Pos;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
-import javafx.scene.input.MouseButton;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
@@ -21,7 +18,7 @@ public class View {
 							   btnNumNine,btnAns,btnNumZero,btnPor,btnClear,btnDelete,btnDoubleZero,btnClose, btnOpen;	
 	private HBox hbc, hbC1,hbC2,hbC3,hbDisplay,hbOperation,hbParenthesis ;
 	private VBox vbColumn1, vbOperation, vbColumn2,vbColumn3,vbParenthesis;
-	private Button btnSum, btnDeduc, btnDivide, btnMultiply,btnEquals;
+	private Button btnSum, btnSubtract, btnDivide, btnMultiply,btnEquals;
 	private TextField display;
 
 	public View() {
@@ -84,19 +81,6 @@ public class View {
 		btnNumFour.setPrefSize(100, 30);
 		
 		btnNumOne = new Button("1");
-		
-		  btnNumOne.setOnMouseClicked(new EventHandler<MouseEvent>() 
-		{
-			  String one ="";
-			    public void handle(MouseEvent mouseEvent) 
-			    {
-			        if(mouseEvent.getButton().equals(MouseButton.PRIMARY))
-			        {
-			                one += "1";
-			                display.setText(one);
-			        }
-			    }
-			});
 		btnNumOne.setStyle("-fx-background-color: #1E90FF; -fx-text-fill: #FFFFFF;-fx-font-size:20px;-fx-background-radius:0px");
 		btnNumOne.setPrefSize(100, 30);
 		
@@ -186,16 +170,16 @@ public class View {
 		btnMultiply.setStyle("-fx-background-color:#FFD700;-fx-text-fill: #FFFFFF;-fx-font-size:20px;-fx-background-radius:0px");
 		btnMultiply.setPrefSize(80, 30);
 		
-		btnDeduc = new Button("-");
-		btnDeduc.setPrefSize(80, 30);
-		btnDeduc.setStyle("-fx-background-color:#FFD700;-fx-text-fill: #FFFFFF;-fx-font-size:20px;-fx-background-radius:0px");
+		btnSubtract = new Button("-");
+		btnSubtract.setPrefSize(80, 30);
+		btnSubtract.setStyle("-fx-background-color:#FFD700;-fx-text-fill: #FFFFFF;-fx-font-size:20px;-fx-background-radius:0px");
 		
 		btnSum = new Button("+"); 
 		btnSum.setStyle("-fx-background-color: #FFD700;-fx-text-fill: #FFFFFF;-fx-font-size:20px;-fx-background-radius:0px");
 		btnSum.setPrefSize(80, 80);
 		
 	
-		vbOperation.getChildren().addAll( btnDivide, btnMultiply, btnDeduc,btnSum);
+		vbOperation.getChildren().addAll( btnDivide, btnMultiply, btnSubtract,btnSum);
 		hbOperation.getChildren().add(vbOperation);
 		
 		// ------------------------------------------------------------------------------------------------
@@ -237,242 +221,298 @@ public class View {
 		stage.show();
 	}
 
-	// nur Getter von Elementen anlegen, die veraendert werden und/oder
-	// dynamisch sind
-	
+
+
 	public Scene getScene() {
 		return scene;
 	}
+
+
 
 	public void setScene(Scene scene) {
 		this.scene = scene;
 	}
 
+
+
 	public Button getBtnNumOne() {
 		return btnNumOne;
 	}
+
+
 
 	public void setBtnNumOne(Button btnNumOne) {
 		this.btnNumOne = btnNumOne;
 	}
 
+
+
 	public Button getBtnNumTwo() {
 		return btnNumTwo;
 	}
+
+
 
 	public void setBtnNumTwo(Button btnNumTwo) {
 		this.btnNumTwo = btnNumTwo;
 	}
 
+
+
 	public Button getBtnNumThree() {
 		return btnNumThree;
 	}
+
+
 
 	public void setBtnNumThree(Button btnNumThree) {
 		this.btnNumThree = btnNumThree;
 	}
 
+
+
 	public Button getBtnNumFour() {
 		return btnNumFour;
 	}
+
+
 
 	public void setBtnNumFour(Button btnNumFour) {
 		this.btnNumFour = btnNumFour;
 	}
 
+
+
 	public Button getBtnNumFive() {
 		return btnNumFive;
 	}
+
+
 
 	public void setBtnNumFive(Button btnNumFive) {
 		this.btnNumFive = btnNumFive;
 	}
 
+
+
 	public Button getBtnNumSix() {
 		return btnNumSix;
 	}
+
+
 
 	public void setBtnNumSix(Button btnNumSix) {
 		this.btnNumSix = btnNumSix;
 	}
 
+
+
 	public Button getBtnNumSeven() {
 		return btnNumSeven;
 	}
+
+
 
 	public void setBtnNumSeven(Button btnNumSeven) {
 		this.btnNumSeven = btnNumSeven;
 	}
 
+
+
 	public Button getBtnNumEight() {
 		return btnNumEight;
 	}
+
+
 
 	public void setBtnNumEight(Button btnNumEight) {
 		this.btnNumEight = btnNumEight;
 	}
 
+
+
 	public Button getBtnNumNine() {
 		return btnNumNine;
 	}
+
+
 
 	public void setBtnNumNine(Button btnNumNine) {
 		this.btnNumNine = btnNumNine;
 	}
 
+
+
 	public Button getBtnAns() {
 		return btnAns;
 	}
+
+
 
 	public void setBtnAns(Button btnAns) {
 		this.btnAns = btnAns;
 	}
 
+
+
 	public Button getBtnNumZero() {
 		return btnNumZero;
 	}
+
+
 
 	public void setBtnNumZero(Button btnNumZero) {
 		this.btnNumZero = btnNumZero;
 	}
 
+
+
 	public Button getBtnPor() {
 		return btnPor;
 	}
+
+
 
 	public void setBtnPor(Button btnPor) {
 		this.btnPor = btnPor;
 	}
 
-	public HBox getHbc() {
-		return hbc;
+
+
+	public Button getBtnClear() {
+		return btnClear;
 	}
 
-	public void setHbc(HBox hbc) {
-		this.hbc = hbc;
+
+
+	public void setBtnClear(Button btnClear) {
+		this.btnClear = btnClear;
 	}
 
-	public HBox getHbC1() {
-		return hbC1;
+
+
+	public Button getBtnDelete() {
+		return btnDelete;
 	}
 
-	public void setHbC1(HBox hbC1) {
-		this.hbC1 = hbC1;
+
+
+	public void setBtnDelete(Button btnDelete) {
+		this.btnDelete = btnDelete;
 	}
 
-	public HBox getHbC2() {
-		return hbC2;
+
+
+	public Button getBtnDoubleZero() {
+		return btnDoubleZero;
 	}
 
-	public void setHbC2(HBox hbC2) {
-		this.hbC2 = hbC2;
+
+
+	public void setBtnDoubleZero(Button btnDoubleZero) {
+		this.btnDoubleZero = btnDoubleZero;
 	}
 
-	public HBox getHbC3() {
-		return hbC3;
+
+
+	public Button getBtnClose() {
+		return btnClose;
 	}
 
-	public void setHbC3(HBox hbC3) {
-		this.hbC3 = hbC3;
+
+
+	public void setBtnClose(Button btnClose) {
+		this.btnClose = btnClose;
 	}
 
-	public HBox getHbDisplay() {
-		return hbDisplay;
+
+
+	public Button getBtnOpen() {
+		return btnOpen;
 	}
 
-	public void setHbDisplay(HBox hbDisplay) {
-		this.hbDisplay = hbDisplay;
+
+
+	public void setBtnOpen(Button btnOpen) {
+		this.btnOpen = btnOpen;
 	}
 
-	public HBox getHbOperation() {
-		return hbOperation;
-	}
 
-	public void setHbOperation(HBox hbOperation) {
-		this.hbOperation = hbOperation;
-	}
-
-	public VBox getVbColumn1() {
-		return vbColumn1;
-	}
-
-	public void setVbColumn1(VBox vbColumn1) {
-		this.vbColumn1 = vbColumn1;
-	}
-
-	public VBox getVbOperation() {
-		return vbOperation;
-	}
-
-	public void setVbOperation(VBox vbOperation) {
-		this.vbOperation = vbOperation;
-	}
-
-	public VBox getVbColumn2() {
-		return vbColumn2;
-	}
-
-	public void setVbColumn2(VBox vbColumn2) {
-		this.vbColumn2 = vbColumn2;
-	}
-
-	public VBox getVbColumn3() {
-		return vbColumn3;
-	}
-
-	public void setVbColumn3(VBox vbColumn3) {
-		this.vbColumn3 = vbColumn3;
-	}
 
 	public Button getBtnSum() {
 		return btnSum;
 	}
 
+
+
 	public void setBtnSum(Button btnSum) {
 		this.btnSum = btnSum;
 	}
 
-	public Button getBtnDeduc() {
-		return btnDeduc;
+
+
+	public Button getBtnSubtract() {
+		return btnSubtract;
 	}
 
-	public void setBtnDeduc(Button btnDeduc) {
-		this.btnDeduc = btnDeduc;
+
+
+	public void setBtnSubtract(Button btnSubtract) {
+		this.btnSubtract = btnSubtract;
 	}
+
+
 
 	public Button getBtnDivide() {
 		return btnDivide;
 	}
 
+
+
 	public void setBtnDivide(Button btnDivide) {
 		this.btnDivide = btnDivide;
 	}
+
+
 
 	public Button getBtnMultiply() {
 		return btnMultiply;
 	}
 
+
+
 	public void setBtnMultiply(Button btnMultiply) {
 		this.btnMultiply = btnMultiply;
 	}
+
+
 
 	public Button getBtnEquals() {
 		return btnEquals;
 	}
 
+
+
 	public void setBtnEquals(Button btnEquals) {
 		this.btnEquals = btnEquals;
 	}
+
+
 
 	public TextField getDisplay() {
 		return display;
 	}
 
+
+
 	public void setDisplay(TextField display) {
 		this.display = display;
 	}
 
-
+	// nur Getter von Elementen anlegen, die veraendert werden und/oder
+	// dynamisch sind
+	
+	
 
 
 }
